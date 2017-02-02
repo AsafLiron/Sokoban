@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import view.MainWindowController.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#loadingLevel" text="Load Level" />
+                  <MenuItem mnemonicParsing="false" onAction="#savingLevel" text="Save Level" />
+						<MenuItem mnemonicParsing="false" onAction="#closingLevel" text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Delete" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<left>
+		<VBox prefHeight="300.0" prefWidth="300.0" spacing="10.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button focusTraversable="false" mnemonicParsing="false" onAction="#start" prefHeight="30.0" prefWidth="80.0" text="Start" />
+				<Button focusTraversable="false" mnemonicParsing="false" onAction="#stopmusic" prefHeight="30.0" prefWidth="80.0" text="Turn off the music" />
+			</children>
+			<BorderPane.margin>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+			</BorderPane.margin>
+		</VBox>
+	</left>
+	<bottom>
+		<HBox BorderPane.alignment="CENTER">
+			<children>
+				<Label text="status">
+					<HBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</HBox.margin>
+				</Label>
+			</children>
+		</HBox>
+	</bottom>
+	<center>
+		<SokobanDisplayer fx:id="sokoDisplayer" box="./resources./Items./Box.jpg" space="./resources./Items./Space.jpg" focusTraversable="true" height="800.0" player="./resources./Items./player.png" dest="./resources./Items./Destination.jpg" wall="./resources./Items./Wall.jpg" width="1000.0" BorderPane.alignment="CENTER" />
+	</center>
+</BorderPane>
